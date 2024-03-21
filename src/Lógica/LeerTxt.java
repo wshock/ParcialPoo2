@@ -15,6 +15,7 @@ public class LeerTxt {
             FileReader fileReader = new FileReader(nombreArchivo);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             linea = bufferedReader.readLine();
+            System.out.println(linea);
             bufferedReader.close();
             fileReader.close();
         } catch (IOException e){

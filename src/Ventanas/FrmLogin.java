@@ -10,10 +10,8 @@ import java.awt.event.ActionEvent;
 public class FrmLogin extends Ventana {
 
     public static void main(String[] args) {
-        FrmLogin log = new FrmLogin();
+        ventanaLogin = new FrmLogin();
     }
-
-
 
 
     // Labels
@@ -26,7 +24,7 @@ public class FrmLogin extends Ventana {
     static JTextField txtUsuario, txtContraseña;
 
     // Ventanas
-    public static FrmLogin ventanaLogIn;
+    public static FrmLogin ventanaLogin;
     public static FrmInicio ventanaPrincipal;
 
     public void actionPerformed(ActionEvent e){
