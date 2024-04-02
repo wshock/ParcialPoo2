@@ -9,8 +9,8 @@ import java.awt.event.ActionListener;
 
 public class FrmRegistrar extends Ventana implements ActionListener {
 
-    static JLabel lblTitulo, txtNombres, txtApellidos, txtId, txtEdad;
-    static JTextField tfNombres, tfApellidos, tfId, tfEdad;
+    static JLabel lblTitulo, txtNombres, txtApellidos, txtId, txtEdad, txtTipoSangre;
+    static JTextField tfNombres, tfApellidos, tfId, tfEdad, tfTipoSangre;
     static JButton btnBack, btnRealizarRegistro;
     public FrmRegistrar(){
         super();
@@ -32,7 +32,7 @@ public class FrmRegistrar extends Ventana implements ActionListener {
         }
 
         if (e.getSource().equals(btnRealizarRegistro)){
-            Paciente currentRegister = new Paciente(tfNombres.getText(),tfApellidos.getText(),tfId.getText(),Integer.parseInt(tfEdad.getText()));
+            Paciente currentRegister = new Paciente(tfNombres.getText(),tfApellidos.getText(),tfId.getText(),Integer.parseInt(tfEdad.getText()),tfTipoSangre.getText());
             FrmInicio.pacientes.add(currentRegister);
             FrmListar.actualizarTabla();
 
@@ -76,6 +76,10 @@ public class FrmRegistrar extends Ventana implements ActionListener {
         tfEdad = new JTextField();
         tfEdad.setBounds(20,330,200,30);
 
+        txtTipoSangre = new JLabel("Tipo de sangre:");
+        txtTipoSangre.setBounds(20,380,100,20);
+        tfTipoSangre = new JTextField();
+        tfTipoSangre.setBounds(20,410,200,30);
 
         add(lblTitulo);
 
@@ -90,6 +94,9 @@ public class FrmRegistrar extends Ventana implements ActionListener {
 
         add(txtEdad);
         add(tfEdad);
+
+        add(txtTipoSangre);
+        add(tfTipoSangre);
 
     }
 

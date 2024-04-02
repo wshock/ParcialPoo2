@@ -67,7 +67,7 @@ public class FrmListar extends Ventana implements ActionListener {
         model.addColumn("Apellido");
         model.addColumn("Edad");
         model.addColumn("Documento");
-
+        model.addColumn("Tipo Sangre");
 
         scrollpane = new JScrollPane(tabla);
         scrollpane.setLocation(40,80);

@@ -1,14 +1,19 @@
 package Utiles;
 
 public class Paciente {
-    private String nombres, apellidos, id;
+    private String nombres, apellidos, id, tipoSangre;
     private int edad;
 
-    public Paciente(String nombres, String apellidos, String id, int edad) {
+    public Paciente(String nombres, String apellidos, String id, int edad, String tipoSangre) {
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.id = id;
         this.edad = edad;
+        this.tipoSangre = tipoSangre;
+    }
+
+    public String getTipoSangre() {
+        return tipoSangre;
     }
 
     public String getNombres() {
@@ -28,6 +33,6 @@ public class Paciente {
     }
 
     public Object[] getInformacionPaciente(){
-        return new Object[]{this.getNombres(), this.getApellidos(), this.getEdad(), this.getId()};
+        return new Object[]{this.getNombres(), this.getApellidos(), this.getEdad(), this.getId(), this.getTipoSangre()};
     }
 }
