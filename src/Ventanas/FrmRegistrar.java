@@ -50,7 +50,7 @@ public class FrmRegistrar extends Ventana implements ActionListener {
 
     public void agregarLabels(){
 
-        lblTitulo = new JLabel("Ingresa los datos para realizar el registro del paciente:");
+        lblTitulo = new JLabel("Ingresa los datos del carne perinatal del paciente:");
         lblTitulo.setBounds(100,20,1000,20);
         lblTitulo.setFont(new Font("constantia",Font.BOLD,18));
 

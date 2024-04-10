@@ -3,6 +3,7 @@ package Ventanas;
 import Utiles.Paciente;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
@@ -16,6 +17,7 @@ public class FrmInicio extends Ventana implements ActionListener {
     // Botones
     static JButton btnListar;
     static JButton btnRegistrar;
+    static JLabel lblTitulo;
 
     public static ArrayList<Paciente> pacientes = new ArrayList<>();
 
@@ -26,15 +28,13 @@ public class FrmInicio extends Ventana implements ActionListener {
 
     public void agregarComponentes() {
         this.setTitle("Principal");
-        agregarLabels();
+        agregarBlueLabels();
         agregarBotones();
 
         frmListar = new FrmListar();
         frmRegistrar = new FrmRegistrar();
     }
 
-    public void agregarLabels() {
-    }
 
     public void actionPerformed(ActionEvent e) {
         if (e.getSource().equals(btnRegistrar)) {
@@ -50,13 +50,20 @@ public class FrmInicio extends Ventana implements ActionListener {
 
     public void agregarBotones() {
         btnListar = new JButton("Listar");
-        btnListar.setBounds(150, 200, 100, 70);
+        btnListar.setBounds(100, 200, 150, 70);
         btnListar.addActionListener(this);
         add(btnListar);
 
         btnRegistrar = new JButton("Registrar");
-        btnRegistrar.setBounds(300, 200, 100, 70);
+        btnRegistrar.setBounds(350, 200, 150, 70);
         btnRegistrar.addActionListener(this);
         add(btnRegistrar);
+    }
+
+    public void agregarBlueLabels(){
+        lblTitulo = new JLabel("PANTALLA INICIO:", SwingConstants.CENTER);
+        lblTitulo.setBounds(0,30,600,40);
+        lblTitulo.setFont(new Font("constantia",Font.BOLD,27));
+        add(lblTitulo);
     }
 }
