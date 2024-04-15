@@ -21,7 +21,6 @@ public class FrmInicio extends Ventana implements ActionListener {
 
     public static ArrayList<Paciente> pacientes = new ArrayList<>();
 
-
     public FrmInicio() {
         agregarComponentes();
     }
@@ -35,14 +34,13 @@ public class FrmInicio extends Ventana implements ActionListener {
         frmRegistrar = new FrmRegistrar();
     }
 
-
     public void actionPerformed(ActionEvent e) {
         if (e.getSource().equals(btnRegistrar)) {
             frmRegistrar.setVisible(true);
             this.setVisible(false);
         }
 
-        if (e.getSource().equals(btnListar)){
+        if (e.getSource().equals(btnListar)) {
             frmListar.setVisible(true);
             this.setVisible(false);
         }
@@ -60,10 +58,10 @@ public class FrmInicio extends Ventana implements ActionListener {
         add(btnRegistrar);
     }
 
-    public void agregarBlueLabels(){
+    public void agregarBlueLabels() {
         lblTitulo = new JLabel("PANTALLA INICIO:", SwingConstants.CENTER);
-        lblTitulo.setBounds(0,30,600,40);
-        lblTitulo.setFont(new Font("constantia",Font.BOLD,27));
+        lblTitulo.setBounds(0, 30, 600, 40);
+        lblTitulo.setFont(new Font("constantia", Font.BOLD, 27));
         add(lblTitulo);
     }
 }
