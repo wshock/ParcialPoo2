@@ -26,6 +26,7 @@ public class FrmLogin extends Ventana {
     // Ventanas
     public static FrmLogin ventanaLogin;
     public static FrmInicio ventanaPrincipal;
+    public static FrmBuscarConsulta buscarConsulta;
 
     public void actionPerformed(ActionEvent e){
         if (e.getSource().equals(btnIngresar)){

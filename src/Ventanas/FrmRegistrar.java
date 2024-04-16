@@ -17,7 +17,6 @@ public class FrmRegistrar extends Ventana implements ActionListener {
         super();
         this.setTitle("Registrar paciente");
         this.setVisible(false);
-
         agregarComponentes();
     }
 
@@ -53,12 +52,16 @@ public class FrmRegistrar extends Ventana implements ActionListener {
             FrmInicio.pacientes.add(currentRegister);
             FrmListar.actualizarTabla();
 
+
+            JOptionPane.showMessageDialog(this, "Gestante registrada exitosamente");
+
             // Limpiar los campos después de realizar el registro
             tfNombres.setText("");
             tfId.setText("");
             tfApellidos.setText("");
             tfEdad.setText("");
             tfTipoSangre.setText("");
+
 
             FrmLogin.ventanaPrincipal.setVisible(true);
             this.setVisible(false);

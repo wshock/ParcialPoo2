@@ -13,10 +13,13 @@ public class FrmInicio extends Ventana implements ActionListener {
     // Ventanas
     public static FrmListar frmListar;
     public static FrmRegistrar frmRegistrar;
+    public static FrmBuscarConsulta frmBuscarConsulta;
+    public static FrmCrearConsulta frmCrearConsulta;
 
     // Botones
-    static JButton btnListar;
+    static JButton btnListar, btnCrearConsulta;
     static JButton btnRegistrar;
+    static JButton btnBuscarConsulta;
     static JLabel lblTitulo;
 
     public static ArrayList<Paciente> pacientes = new ArrayList<>();
@@ -32,9 +35,15 @@ public class FrmInicio extends Ventana implements ActionListener {
 
         frmListar = new FrmListar();
         frmRegistrar = new FrmRegistrar();
+        frmBuscarConsulta = new FrmBuscarConsulta();
+        frmCrearConsulta = new FrmCrearConsulta();
     }
 
     public void actionPerformed(ActionEvent e) {
+        if (e.getSource().equals(btnCrearConsulta)){
+            frmCrearConsulta.setVisible(true);
+            this.setVisible(false);
+        }
         if (e.getSource().equals(btnRegistrar)) {
             frmRegistrar.setVisible(true);
             this.setVisible(false);
@@ -44,10 +53,18 @@ public class FrmInicio extends Ventana implements ActionListener {
             frmListar.setVisible(true);
             this.setVisible(false);
         }
+
+
+        if (e.getSource().equals(btnBuscarConsulta)) {
+            frmBuscarConsulta.setVisible(true);
+            this.setVisible(false);
+        }
+
+
     }
 
     public void agregarBotones() {
-        btnListar = new JButton("Listar");
+        btnListar = new JButton("Listar gestantes");
         btnListar.setBounds(100, 200, 150, 70);
         btnListar.addActionListener(this);
         add(btnListar);
@@ -56,6 +73,16 @@ public class FrmInicio extends Ventana implements ActionListener {
         btnRegistrar.setBounds(350, 200, 150, 70);
         btnRegistrar.addActionListener(this);
         add(btnRegistrar);
+
+        btnBuscarConsulta = new JButton("Buscar consulta");
+        btnBuscarConsulta.setBounds(100, 300, 150, 70);
+        btnBuscarConsulta.addActionListener(this);
+        add(btnBuscarConsulta);
+
+        btnCrearConsulta = new JButton("Crear Consulta");
+        btnCrearConsulta.setBounds(350, 300, 150, 70);
+        btnCrearConsulta.addActionListener(this);
+        add(btnCrearConsulta);
     }
 
     public void agregarBlueLabels() {
