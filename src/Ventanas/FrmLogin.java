@@ -21,7 +21,8 @@ public class FrmLogin extends Ventana {
     static JButton btnIngresar;
 
     // Campo de texto
-    static JTextField txtUsuario, txtContraseña;
+    static JTextField txtUsuario;
+    static JPasswordField  txtContraseña;
 
     // Ventanas
     public static FrmLogin ventanaLogin;
@@ -88,7 +89,7 @@ public class FrmLogin extends Ventana {
         lblContraseña = new JLabel("Contraseña: ");
         lblContraseña.setBounds(200, 245, 300, 20);
         lblContraseña.setFont(fuenteUsuarioContraseña);
-        txtContraseña = new JTextField();
+        txtContraseña = new JPasswordField();
         txtContraseña.setBounds(200, 280, 200, 30);
 
 
