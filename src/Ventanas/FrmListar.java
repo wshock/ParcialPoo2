@@ -49,7 +49,7 @@ public class FrmListar extends Ventana implements ActionListener {
     }
 
     private void colocarBotones(){
-        ImageIcon imgBack = new ImageIcon("img/back.png");
+        ImageIcon imgBack = new ImageIcon("img/back2.png");
         btnBack = new JButton(imgBack);
         btnBack.setBounds(5,5,40,20);
         btnBack.addActionListener(this);

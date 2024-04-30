@@ -1,10 +1,12 @@
 package Ventanas;
 
+import Lógica.AprobarIngreso;
 import Lógica.ValidarUsuarios;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.sql.SQLException;
 
 
 public class FrmLogin extends Ventana {
@@ -36,17 +38,33 @@ public class FrmLogin extends Ventana {
             String password = txtContraseña.getText();
 
 
-            if (ValidarUsuarios.validarUsuario(username, password)){
-                lblUsuario.setText("");
-                lblContraseña.setText("");
-                ventanaPrincipal.setVisible(true);
-                this.setVisible(false);
+            /* ANTES CON ARCIHVOS PLANOS:
+            if (ValidarUsuarios.validarUsuario(username, password))  */
+            try {
+                if (AprobarIngreso.consultarAprobacion(username, password)){ // Ahora con bases de datos
+
+                    lblUsuario.setText("");
+                    lblContraseña.setText("");
+                    ventanaPrincipal.setVisible(true);
+                    this.setVisible(false);
 
 
-            } else {
-                lblErrorSaludo.setText("Los datos ingresados no coinciden");
+                } else {
+                    lblErrorSaludo.setText("Los datos ingresados no coinciden");
+                }
+            } catch (SQLException ex) {
+                System.out.println("1");
+                throw new RuntimeException(ex);
+            } catch (ClassNotFoundException ex) {
+                System.out.println("2");
+                throw new RuntimeException(ex);
+            } catch (InstantiationException ex) {
+                System.out.println("3");
+                throw new RuntimeException(ex);
+            } catch (IllegalAccessException ex) {
+                System.out.println("4");
+                throw new RuntimeException(ex);
             }
-
 
 
         }
