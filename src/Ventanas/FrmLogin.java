@@ -1,6 +1,7 @@
 package Ventanas;
 
 import Lógica.AprobarIngreso;
+import Lógica.RegistrarLogin;
 import Lógica.ValidarUsuarios;
 
 import javax.swing.*;
@@ -42,7 +43,7 @@ public class FrmLogin extends Ventana {
             if (ValidarUsuarios.validarUsuario(username, password))  */
             try {
                 if (AprobarIngreso.consultarAprobacion(username, password)){ // Ahora con bases de datos
-
+                    RegistrarLogin.registrarLogin(username);
                     lblUsuario.setText("");
                     lblContraseña.setText("");
                     ventanaPrincipal.setVisible(true);
